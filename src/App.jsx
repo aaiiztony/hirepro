@@ -1,25 +1,32 @@
 import { useEffect, useState } from "react";
-import { Navbar, Footer, Hero } from "./components";
+import { Navbar, Footer, Hero, Login, Signup, Test } from "./components";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
-  useEffect(()=>{
-    const mediaQuery = window.matchMedia("(max-width:680px)")
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width:680px)");
     setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (e)=>{
+    const handleMediaQueryChange = (e) => {
       setIsMobile(e.matches);
-    }
+    };
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return()=>{
-      mediaQuery.removeEventListener('change', handleMediaQueryChange)
-    }
-  }, [])
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   return (
     <>
-      <div className="bg-secondary/40">
-          <Navbar isMobile={isMobile}/>
-        <div className="w-[80%] mx-auto">
-          <Hero isMobile={isMobile}/>
+      <div className="bg-secondary/40 ">
+        <Navbar isMobile={isMobile} />
+        <div className="w-[80%] mx-auto h-[70vh]">
+          <Routes>
+            <Route path="/" element={<Hero isMobile={isMobile} />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/about" element={<Test />} />
+              <Route path="/contact" element={<Test />} />
+          </Routes>
         </div>
         <Footer />
       </div>

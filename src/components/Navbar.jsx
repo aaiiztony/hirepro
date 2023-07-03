@@ -9,7 +9,8 @@ const Navbar = ({isMobile}) => {
   return (
     <nav className={`${scrolled?"bg-secondary shadow":"bg-transparent"}`}>
     <div className='h-[80px] w-[80%] mx-auto bg-transparent flex justify-between items-center'>
-      <img src={logo} alt="logo" className='h-[30px] sm:h-[50px] object-contain' />
+      <Link to='/'>
+      <img src={logo} alt="logo" className='h-[30px] sm:h-[50px] object-contain' /></Link>
       {!isMobile?(
       <ul className='flex gap-5 font-dsans'>
         <Link to={`/signup`}>Signup</Link>
