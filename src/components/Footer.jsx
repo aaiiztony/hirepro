@@ -34,7 +34,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="flex-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10"></div>
-      <p>@2023 Hirepro. All rights reserved</p>
+      <p className='sm:text-start text-center'>@2023 Hirepro. All rights reserved</p>
       <div className="flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10 mb-2">
         <Link to='/' className='text-gray-500'>Privacy & Policy</Link>
         <Link to='/' className='text-gray-500'>Terms & Condition</Link>

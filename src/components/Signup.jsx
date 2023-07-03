@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import Lottie from 'lottie-react';
 import signupAnimation from '../assets/signupAnimation.json';
 
-const Signup = () => {
+const Signup = ({isMobile}) => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -16,10 +16,12 @@ const Signup = () => {
   });
   return (
     <div className="w-full min-h-full flex justify-center items-center">
-    <div className="h-full flex mt-10">
-    <Lottie animationData={signupAnimation} className="sm:h-[450px] w-full"/>
+    <div className={`h-full flex mt-10 ${
+        isMobile ? "flex-wrap" : ""
+      }`}>
+    <Lottie animationData={signupAnimation} className="sm:h-[450px] w-full" lopp={true} onComplete={()=>loop(false)}/>
     <div className="signup__container">
-    <h1 className="font-extrabold sm:text-4xl text-xl font-dsans mt-10 mb-3 ml-2">Start looking for your perfect candidate 🔎</h1>
+    <h1 className="font-extrabold sm:text-4xl text-xl font-dsans mt-4 sm:mt-10 mb-3 ml-2">Start looking for your perfect candidate 🔎</h1>
     <form onSubmit={formik.handleSubmit} className="flex flex-col space-y-2 sm:max-w-[450px] w-full mx-auto px-2">
       <input
       className="mt-2 rounded-md bg-white p-2 text-sm shadow"

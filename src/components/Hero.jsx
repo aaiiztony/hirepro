@@ -20,12 +20,11 @@ const Hero = ({ isMobile }) => {
           totam
         </p>
         <div className="flex gap-2 mt-2 font-dsans">
-          <button className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1">
-            <Link to="/signup">Signup</Link>
-          </button>
-          <button className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1">
-            <Link to="/login">Login</Link>
-          </button>
+          
+            <Link to="/signup" className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1"><button className="w-full text-center">Signup
+            </button></Link>
+            <Link to="/login" className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1"><button className="w-full text-center">Login
+            </button></Link>
         </div>
       </div>
       <Lottie animationData={animationData} />

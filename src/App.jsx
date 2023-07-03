@@ -19,11 +19,11 @@ const App = () => {
     <>
       <div className="bg-secondary/40 ">
         <Navbar isMobile={isMobile} />
-        <div className="w-[80%] mx-auto h-[70vh]">
+        <div className="w-[80%] mx-auto ">
           <Routes>
             <Route path="/" element={<Hero isMobile={isMobile} />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login isMobile={isMobile}/>} />
+              <Route path="/signup" element={<Signup isMobile={isMobile}/>} />
               <Route path="/about" element={<Test />} />
               <Route path="/contact" element={<Test />} />
           </Routes>
