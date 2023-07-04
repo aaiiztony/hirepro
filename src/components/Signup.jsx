@@ -21,7 +21,7 @@ const Signup = ({isMobile}) => {
       }`}>
     <Lottie animationData={signupAnimation} className="sm:h-[450px] w-full"/>
     <div className="signup__container">
-    <h1 className="font-extrabold sm:text-4xl text-xl font-dsans mt-4 sm:mt-10 mb-3 ml-2">Start looking for your perfect candidate 🔎</h1>
+    <h1 className="font-extrabold sm:text-4xl text-xl font-dsans mt-4 sm:mt-10 mb-3 ml-6">Start looking for your perfect candidate 🔎</h1>
     <form onSubmit={formik.handleSubmit} className="flex flex-col space-y-2 sm:max-w-[450px] w-full mx-auto px-2">
       <input
       className="mt-2 rounded-md bg-white p-2 text-sm shadow"
