@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 const Hero = ({ isMobile }) => {
   return (
     <div
-      className={`h-full w-full flex mt-10 items-center ${
+      className={`h-full w-full flex items-center ${
         isMobile ? "flex-wrap-reverse" : ""
       }`}
     >
@@ -24,6 +24,8 @@ const Hero = ({ isMobile }) => {
             <Link to="/signup" className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1"><button className="w-full text-center">Signup
             </button></Link>
             <Link to="/login" className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1"><button className="w-full text-center">Login
+            </button></Link>
+            <Link to="/loginauth" className="bg-accent hover:bg-secondary w-full sm:w-[80px] rounded mt-2 py-1"><button className="w-full text-center">Login by Auth0
             </button></Link>
         </div>
       </div>

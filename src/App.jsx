@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navbar, Footer, Hero, Login, Signup, Test } from "./components";
 import { Route, Routes } from "react-router-dom";
+import LoginAuth0 from "./components/LoginAuth0";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -23,6 +24,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Hero isMobile={isMobile} />} />
               <Route path="/login" element={<Login isMobile={isMobile}/>} />
+              <Route path="/loginauth" element={<LoginAuth0 />} />
               <Route path="/signup" element={<Signup isMobile={isMobile}/>} />
               <Route path="/about" element={<Test />} />
               <Route path="/contact" element={<Test />} />
