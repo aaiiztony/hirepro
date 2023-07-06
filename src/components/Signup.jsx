@@ -2,8 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import Lottie from 'lottie-react';
 import signupAnimation from '../assets/signupAnimation.json';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Signup = ({isMobile}) => {
+  const { loginWithRedirect } = useAuth0();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -50,8 +52,8 @@ const Signup = ({isMobile}) => {
         value={formik.values.password}
       />
       <button type="submit" className="bg-accent hover:bg-primary opacity-50 hover:opacity-100 focus:opacity-100 focus:bg-primary py-1  mt-2 rounded-md shadow">Submit</button>
-    <button className="bg-red-400 hover:bg-primary  focus:opacity-100 focus:bg-primary py-1  mt-2 rounded-md shadow">Google Auth</button>
     </form>
+    <button onClick={() => loginWithRedirect()} className="bg-red-400 hover:bg-primary  focus:opacity-100 focus:bg-primary py-1 mt-2 rounded-md shadow sm:max-w-[420px] ml-2 w-full">Google Auth</button>
     </div>
     </div>
     </div>
