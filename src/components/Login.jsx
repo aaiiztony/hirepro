@@ -2,14 +2,18 @@ import React from "react";
 import { useFormik } from "formik";
 import Lottie from "lottie-react";
 import LoginAnimation from "../assets/loginAnimation.json";
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Login = ({isMobile}) => {
+  const { loginWithRedirect } = useAuth0();
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
+      localStorage.setItem("credentials", JSON.stringify(values))
       alert(JSON.stringify(values, null, 2));
     },
   });
@@ -54,11 +58,12 @@ const Login = ({isMobile}) => {
             />
             <button
               type="submit"
-              className="bg-accent hover:bg-primary opacity-50 hover:opacity-100 focus:opacity-100 focus:bg-primary py-1 mt-2 rounded-md shadow"
+              className="bg-accent hover:bg-primary focus:opacity-100 focus:bg-primary py-1 mt-2 rounded-md shadow border border-slate-300"
             >
               Submit
             </button>
           </form>
+            <button onClick={() => loginWithRedirect()} className="bg-red-400 hover:bg-primary focus:opacity-100 focus:bg-primary py-1 mt-2 rounded-md shadow sm:max-w-[285px] w-full ml-2">Google Auth</button>
         </div>
       </div>
     </div>
