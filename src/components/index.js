@@ -7,3 +7,4 @@ export {default as Navbar} from './Navbar';
 export {default as Test} from './Test';
 export {default as Home} from './Home';
 export {default as Candidates} from './Candidates';
+export {default as CustomFilter} from './CustomFilter';

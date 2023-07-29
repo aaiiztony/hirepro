@@ -21,7 +21,7 @@ const App = () => {
     <>
       <div className="bg-secondary/40 ">
         <Navbar isMobile={isMobile} isAuthenticated={isAuthenticated} logout={logout}/>
-        <div className="w-[80%] mx-auto ">
+        <div className="w-[80%] mx-auto">
           <Routes>
             <Route
               path="/"

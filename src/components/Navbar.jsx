@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo-color.svg";
 import { Link } from "react-router-dom";
 import { close, menu } from "../assets";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = ({ isMobile, isAuthenticated,logout }) => {
   const [closeMenu, setCloseMenu] = useState(true);
-  useEffect(() => {
-    setInterval(() => setCloseMenu(true), 10000);
-  }, []);
+  const {user} = useAuth0()
   return (
     <nav className="bg-transparent">
       <div className="h-[80px] w-[80%] mx-auto bg-transparent flex justify-between items-center">
@@ -15,18 +14,25 @@ const Navbar = ({ isMobile, isAuthenticated,logout }) => {
           <img
             src={logo}
             alt="logo"
-            className="h-[30px] sm:h-[50px] object-contain"
+            className="h-[30px] sm:h-[40px] object-contain"
           />
         </Link>
         {!isMobile ? (
           <ul className="flex gap-5 font-dsans ">
             {isAuthenticated?(
-              <Link to={`/logout`} onClick={()=> logout({ logoutParams: { returnTo: window.location.origin } })} >Logout</Link>
+              <>
+              <div className="user flex items-center gap-2  rounded-xl ml-[-20%]">
+              <img src={user.picture} alt="user_image" className="h-10 w-10 rounded-full shadow object-contain cursor-pointer" />
+              <Link to={`/logout`} onClick={()=> logout({ logoutParams: { returnTo: window.location.origin } })} ><h2 className="text-3xl">📲</h2></Link>
+              </div>
+              </>
               ):(
+                <>
                 <Link to={`/login`}>Login</Link>
-            )}
               <Link to={`/about`}>About</Link>
               <Link to={`/contact`}>Contact</Link>
+              </>
+            )}
           </ul>
         ) : (
           <div className="flex flex-col relative">
@@ -37,8 +43,8 @@ const Navbar = ({ isMobile, isAuthenticated,logout }) => {
               onClick={() => setCloseMenu(!closeMenu)}
             />
             {!closeMenu && (
-              <div className="mt-8 ml-[-50px] absolute bg-accent rounded-md px-5 py-3">
-                <ul className="flex flex-col gap-3 font-dsans">
+              <div className="bg-primary w-[130px] h-[150px] mt-10  rounded-md font-dsans inset-0 ml-[-250%] absolute z-10 shadow-md">
+                <ul className="flex justify-center h-[150px] ml-[25%] flex-col gap-3">
                 {isAuthenticated?(
               <Link to={`/logout`} onClick={()=> logout({ logoutParams: { returnTo: window.location.origin } })} >Logout</Link>
               ):(

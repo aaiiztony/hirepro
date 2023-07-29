@@ -12,3 +12,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.form-button{
+  @apply  hover:bg-primary focus:opacity-100 focus:bg-primary py-1 mt-2 rounded-md shadow
+}
+.form-input {
+  @apply mt-2 rounded-md bg-white shadow p-2 text-sm
+}
