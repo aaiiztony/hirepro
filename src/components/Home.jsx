@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Candidates from "./Candidates";
 import { candidates, jobRoles, locations } from "../constants/constants";
 import CustomFilter from "./CustomFilter";
+import ErrorModal from "./ErrorModal";
 
 const Home = ({ isAuthenticated }) => {
   const [searchInputLocation, setSearchInputLocation] = useState("")
@@ -17,7 +18,7 @@ const Home = ({ isAuthenticated }) => {
   return (
     <div>
       {isAuthenticated && (
-        <div className="w-full">
+        <div className="w-full min-h-[70vh]">
           <div className="flex my-5">
             <div className="flex justify-between w-full sm:flex-row flex-col sm:items-center">
               <h2 className="font-dsans text-3xl font-bold mt-2">
@@ -31,9 +32,12 @@ const Home = ({ isAuthenticated }) => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
             {filteredCandidate.map((candidate, index) => (
-              <Candidates key={index} candidate={candidate} index={index} />
+                <Candidates key={index} candidate={candidate} index={index} />
               ))}
           </div>
+            {filteredCandidate.length==0 && (
+              <ErrorModal/>
+            )}
         </div>
       )}
     </div>
