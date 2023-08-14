@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navbar, Footer, Hero, Login, Signup, Test, Home } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { FilterContext } from "./context/filterContext";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,8 +18,9 @@ const App = () => {
     };
   }, []);
   const { user, isAuthenticated, logout } = useAuth0();
+  const [filterData, setFilterData] = useState("hello")
   return (
-    <>
+    <FilterContext.Provider value={filterData}>
       <div className="bg-secondary/40 ">
         <Navbar isMobile={isMobile} isAuthenticated={isAuthenticated} logout={logout}/>
         <div className="w-[80%] mx-auto">
@@ -45,7 +47,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </>
+      </FilterContext.Provider>
   );
 };
 

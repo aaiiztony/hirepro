@@ -22,7 +22,7 @@ const Home = ({ isAuthenticated }) => {
           <div className="flex my-5">
             <div className="flex justify-between w-full sm:flex-row flex-col sm:items-center">
               <h2 className="font-dsans text-3xl font-bold mt-2">
-                Find your ideal candidate 🔎
+                Search your ideal candidate 🔎
               </h2>
               <div className="sm:flex gap-2 inline">
               <CustomFilter searchInput={searchInputLocation} setSearchInput={setSearchInputLocation} parameter={locations}/>

@@ -8,7 +8,7 @@ const Candidates = ({ candidate }) => {
         <h2 className="font-bold text-2xl">{candidate.name}</h2>
         <p>{candidate.job_role}</p>
       </div>
-      <button className="bg-white invisible w-full rounded-full my-2 py-2 hover:bg-accent group-hover:visible" onClick={(e)=>console.log(e)}>Select</button>
+      <button className="bg-white invisible w-full rounded-full my-2 py-2 hover:bg-accent group-hover:visible" onClick={(e)=>candidate.location}>Select</button>
     </div>
   );
 };

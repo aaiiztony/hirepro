@@ -14,11 +14,11 @@ const ErrorModal = () => {
 
   return (
     <>
-    <div className="fixed inset-0 flex items-center justify-center">
-         <h2 className="font-dsans font-bold text-gray-800">Try contacting the candidate matching your job requirement and check if relocation is an option</h2>
+    <div className="flex items-center justify-center sm:mt-10 mt-5 bg-secondary shadow rounded-md">
+         <h2 className="font-dsans font-bold text-gray-800 p-6 ">Try contacting the candidate <br className='sm:hidden block'/>that matches your job requirement. </h2>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-30" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -42,7 +42,7 @@ const ErrorModal = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-accent p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
@@ -58,10 +58,10 @@ const ErrorModal = () => {
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-black hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary  focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Got it, thanks!
+                      Got it
                     </button>
                   </div>
                 </Dialog.Panel>

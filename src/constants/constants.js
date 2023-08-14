@@ -60,6 +60,18 @@ export const candidates = [
         location: "Kerala"
       },
       {
+        name: "Aman Akbar",
+        age: 25,
+        job_role: "Software Engineer",
+        location: "Andhra Pradesh"
+      },
+      {
+        name: "Rohit Kumar",
+        age: 27,
+        job_role: "Sales Executive",
+        location: "Bihar"
+      },
+      {
         name: "Jennifer Lee",
         age: 29,
         job_role: "Product Manager",
@@ -111,13 +123,13 @@ export const candidates = [
         name: "Raj Jha",
         age: 23,
         job_role: "Android Developer",
-        location: "Mumbai"
+        location: "Maharashtra"
       },
       {
         name: "Bindu",
         age: 23,
         job_role: "Android Developer",
-        location: "Mumbai"
+        location: "Maharashtra"
       }
     ]
 
